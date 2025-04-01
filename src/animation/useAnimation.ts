@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAnimation as useFramerAnimation, Variant } from 'framer-motion';
+import { useAnimation as useFramerAnimation, Variant, Transition } from 'framer-motion';
 import { useAnimationContext } from './AnimationProvider';
 
 export interface UseAnimationOptions {
@@ -35,7 +35,7 @@ export const useAnimation = (inView: boolean, options: UseAnimationOptions = {})
       controls.start({
         ...variant.visible,
         transition: {
-          ...(variant.visible as Variant)?.transition,
+          ...(variant.visible as any)?.transition,
           delay,
           duration,
         },
@@ -44,7 +44,7 @@ export const useAnimation = (inView: boolean, options: UseAnimationOptions = {})
       controls.start({
         ...variant.hidden,
         transition: {
-          ...(variant.hidden as Variant)?.transition,
+          ...(variant.hidden as any)?.transition,
           duration: duration / 2,
         },
       });
@@ -78,13 +78,8 @@ export const useStaggerAnimation = (inView: boolean, options: UseAnimationOption
     if (!enabled) return;
     
     if (inView) {
-      controls.start('visible', {
-        transition: {
-          staggerChildren: 0.1,
-          delayChildren: delay,
-          duration,
-        },
-      });
+      // Use a more direct approach for staggered animations
+      controls.start('visible');
     } else if (!once) {
       controls.start('hidden');
     }
@@ -93,5 +88,9 @@ export const useStaggerAnimation = (inView: boolean, options: UseAnimationOption
   return {
     animate: controls,
     initial: enabled ? 'hidden' : false,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: delay,
+    } as any
   };
 }; 

@@ -3,7 +3,6 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
 import { init } from './commands/init';
-import { add } from './commands/add';
 import { getPackageVersion } from './utils';
 
 const program = new Command();
@@ -26,13 +25,16 @@ program
 program
   .command('add <component-name>')
   .description('Add a component to your project')
-  .action(add);
+  .action((componentName) => {
+    console.log(chalk.yellow('Add command is not fully implemented yet.'));
+    console.log(`Requested to add: ${componentName}`);
+  });
 
 // Handle errors
 program.exitOverride();
 try {
   program.parse(process.argv);
-} catch (err) {
+} catch (err: any) {
   console.error(chalk.red('Error:'), err.message);
   process.exit(1);
 } 

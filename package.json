@@ -13,7 +13,12 @@
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest",
     "prepare": "npm run build",
-    "cli": "node ./dist/cli/index.js"
+    "cli": "node ./dist/cli/index.js",
+    "example:install": "cd example && npm install",
+    "example:dev": "cd example && npm start",
+    "example:build": "cd example && npm run build",
+    "dev:all": "npm run dev & npm run example:dev",
+    "start": "npm run example:dev"
   },
   "keywords": [
     "ui",

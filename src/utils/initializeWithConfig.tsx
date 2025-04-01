@@ -23,7 +23,7 @@ interface S2UIConfig {
 export const initializeWithConfig = (
   config: S2UIConfig = {},
   children: React.ReactNode
-) => {
+): JSX.Element => {
   // Extract animation settings from config
   const animationSettings = {
     enabled: config.animation?.enabled ?? true,

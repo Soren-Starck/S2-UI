@@ -202,7 +202,7 @@ export async function init(): Promise<void> {
     console.log(chalk.blue('\nNext steps:'));
     console.log(`  1. Run ${chalk.cyan('npm install s2-ui')} to install the library`);
     console.log(`  2. Add components with ${chalk.cyan('npx s2-ui add <component-name>')}`);
-  } catch (error) {
+  } catch (error: any) {
     console.error(chalk.red('Error creating configuration:'), error.message);
   }
 } 

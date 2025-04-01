@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useAnimationContext } from '../animation';
+import { useAnimationContext } from 's2-ui/animation';
 
 export interface {{ComponentName}}Props {
   // Add your props here

@@ -41,6 +41,44 @@ This will:
 2. Install any required peer dependencies
 3. Add an import to your component registry
 
+## Development
+
+### Running the Example App
+
+The project includes an example app to showcase and test components:
+
+```bash
+# Install dependencies
+npm install
+npm run example:install
+
+# Run both the library in watch mode and the example app
+npm run dev:all
+
+# Or run only the example app (if the library is already built)
+npm run example:dev
+```
+
+Then open http://localhost:5173 in your browser to see the components in action.
+
+### Building the Library
+
+```bash
+npm run build
+```
+
+### Running the CLI Locally
+
+```bash
+npm run cli -- <command>
+```
+
+For example:
+```bash
+npm run cli -- init
+npm run cli -- add button
+```
+
 ## Creating Custom Components
 
 Each component should be defined in a single file using Tailwind CSS for styling:

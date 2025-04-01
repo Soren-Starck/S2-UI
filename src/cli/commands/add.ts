@@ -91,7 +91,7 @@ export async function add(componentName: string): Promise<void> {
     
     console.log(chalk.green(`\n✓ Component ${formattedName} added successfully!`));
     console.log(`\nImport it in your code with: ${chalk.cyan(`import { ${formattedName} } from '${config.componentRegistry.replace('.ts', '')}';`)}`);
-  } catch (error) {
+  } catch (error: any) {
     console.error(chalk.red('Error adding component:'), error.message);
   }
 } 

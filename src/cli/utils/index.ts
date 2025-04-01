@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { execa } from 'execa';
+import execa from 'execa';
 
 /**
  * Get the current package version from package.json
@@ -37,7 +37,7 @@ export function readConfig(configPath = 's2-ui.config.js'): Record<string, any> 
     // We need to use require here to load the JS config
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     return require(configFilePath);
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(`Failed to parse config file: ${error.message}`);
   }
 }
@@ -56,7 +56,7 @@ export async function installDependencies(
   
   try {
     await execa('npm', args, { stdio: 'inherit' });
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(`Failed to install dependencies: ${error.message}`);
   }
 }
@@ -87,7 +87,7 @@ export async function getPackagePeerDependencies(packageName: string): Promise<s
     const peerDeps = JSON.parse(stdout);
     
     return Object.keys(peerDeps).map(dep => `${dep}@${peerDeps[dep]}`);
-  } catch (error) {
+  } catch (error: any) {
     console.warn(`Warning: Could not fetch peer dependencies for ${packageName}`);
     return [];
   }
