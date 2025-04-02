@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
   const selectedAnimation = animation || defaultAnimation;
   const animationVariant = animationVariants[selectedAnimation];
   
-  const baseStyles = 'font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'font-medium rounded-lg w-fit shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantStyles = {
     primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
@@ -71,8 +71,8 @@ export const Button: React.FC<ButtonProps> = ({
       initial="hidden"
       animate="visible"
       variants={animationVariant}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.0 }}
+      whileTap={disabled ? {} : { scale: 0.98 }}
       transition={{ duration: 0.3 }}
     >
       {children}

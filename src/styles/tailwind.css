@@ -5,8 +5,8 @@
 /* Custom variables for the theme */
 :root {
   /* Primary colors */
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
+  --color-primary-500: #000000;
+  --color-primary-600: #494949;
   
   /* Secondary colors */
   --color-secondary-200: #e5e7eb;
