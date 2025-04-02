@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './index.html',
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,8 +13,8 @@ module.exports = {
           200: 'var(--s2-primary-200, #bae6fd)',
           300: 'var(--s2-primary-300, #7dd3fc)',
           400: 'var(--s2-primary-400, #38bdf8)',
-          500: 'var(--s2-primary-500, #0ea5e9)',
-          600: 'var(--s2-primary-600, #0284c7)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
           700: 'var(--s2-primary-700, #0369a1)',
           800: 'var(--s2-primary-800, #075985)',
           900: 'var(--s2-primary-900, #0c4a6e)',
@@ -20,14 +23,14 @@ module.exports = {
         secondary: {
           50: 'var(--s2-secondary-50, #f8fafc)',
           100: 'var(--s2-secondary-100, #f1f5f9)',
-          200: 'var(--s2-secondary-200, #e2e8f0)',
-          300: 'var(--s2-secondary-300, #cbd5e1)',
+          200: 'var(--color-secondary-200)',
+          300: 'var(--color-secondary-300)',
           400: 'var(--s2-secondary-400, #94a3b8)',
-          500: 'var(--s2-secondary-500, #64748b)',
+          500: 'var(--color-secondary-500)',
           600: 'var(--s2-secondary-600, #475569)',
           700: 'var(--s2-secondary-700, #334155)',
-          800: 'var(--s2-secondary-800, #1e293b)',
-          900: 'var(--s2-secondary-900, #0f172a)',
+          800: 'var(--color-secondary-800)',
+          900: 'var(--color-secondary-900)',
           950: 'var(--s2-secondary-950, #020617)',
         },
         accent: {
@@ -36,8 +39,8 @@ module.exports = {
           200: 'var(--s2-accent-200, #fbcfe8)',
           300: 'var(--s2-accent-300, #f9a8d4)',
           400: 'var(--s2-accent-400, #f472b6)',
-          500: 'var(--s2-accent-500, #ec4899)',
-          600: 'var(--s2-accent-600, #db2777)',
+          500: 'var(--color-accent-500)',
+          600: 'var(--color-accent-600)',
           700: 'var(--s2-accent-700, #be185d)',
           800: 'var(--s2-accent-800, #9d174d)',
           900: 'var(--s2-accent-900, #831843)',
@@ -62,10 +65,10 @@ module.exports = {
         '3xl': ['var(--s2-font-size-3xl, 1.875rem)', { lineHeight: 'var(--s2-line-height-3xl, 2.25rem)' }],
       },
       spacing: {
-        'xs': 'var(--s2-spacing-xs, 0.25rem)',
-        'sm': 'var(--s2-spacing-sm, 0.5rem)',
-        'md': 'var(--s2-spacing-md, 1rem)',
-        'lg': 'var(--s2-spacing-lg, 1.5rem)',
+        'xs': 'var(--spacing-xs)',
+        'sm': 'var(--spacing-sm)',
+        'md': 'var(--spacing-md)',
+        'lg': 'var(--spacing-lg)',
         'xl': 'var(--s2-spacing-xl, 2rem)',
         '2xl': 'var(--s2-spacing-2xl, 3rem)',
       },

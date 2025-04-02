@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom variables for the theme */
+:root {
+  /* Primary colors */
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  
+  /* Secondary colors */
+  --color-secondary-200: #e5e7eb;
+  --color-secondary-300: #d1d5db;
+  --color-secondary-500: #6b7280;
+  --color-secondary-800: #1f2937;
+  --color-secondary-900: #111827;
+  
+  /* Accent colors */
+  --color-accent-500: #ec4899;
+  --color-accent-600: #db2777;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+}
+
+/* Component-specific styles */
+@layer components {
+  .bg-primary-500 {
+    background-color: var(--color-primary-500);
+  }
+  .bg-primary-600 {
+    background-color: var(--color-primary-600);
+  }
+  .text-primary-500 {
+    color: var(--color-primary-500);
+  }
+  
+  .bg-secondary-200 {
+    background-color: var(--color-secondary-200);
+  }
+  .bg-secondary-300 {
+    background-color: var(--color-secondary-300);
+  }
+  .text-secondary-800 {
+    color: var(--color-secondary-800);
+  }
+  .text-secondary-900 {
+    color: var(--color-secondary-900);
+  }
+  .text-secondary-600 {
+    color: var(--color-secondary-600);
+  }
+  
+  .bg-accent-500 {
+    background-color: var(--color-accent-500);
+  }
+  .bg-accent-600 {
+    background-color: var(--color-accent-600);
+  }
+  
+  .py-xs {
+    padding-top: var(--spacing-xs);
+    padding-bottom: var(--spacing-xs);
+  }
+  .py-sm {
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+  }
+  .py-md {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+  
+  .px-sm {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+  .px-md {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+  .px-lg {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+  
+  .p-md {
+    padding: var(--spacing-md);
+  }
+} 

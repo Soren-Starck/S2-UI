@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
   const selectedAnimation = animation || defaultAnimation;
   const animationVariant = animationVariants[selectedAnimation];
   
-  const baseStyles = 'font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantStyles = {
     primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
@@ -65,7 +65,7 @@ export const Button: React.FC<ButtonProps> = ({
   // Otherwise, use animated button
   return (
     <motion.button
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyles} ${disabledStyles} ${className}`}
+      className={`rounded-xl ${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyles} ${disabledStyles} ${className}`}
       onClick={onClick}
       disabled={disabled}
       initial="hidden"
