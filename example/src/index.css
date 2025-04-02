@@ -20,18 +20,78 @@ body {
 
 /* Explicitly disable browser default styles */
 button {
-  appearance: none;
-  background: none;
-  border: none;
+  appearance: none !important;
+  background: none !important;
+  border: none !important;
+  font: inherit !important;
+}
+
+button[type="button"] {
   padding: 0;
-  font: inherit;
-  cursor: pointer;
+  background-color: transparent;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Custom component styles - inline to ensure they're available */
+.btn-primary {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2563eb !important;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #d1d5db !important;
+}
+
+.btn-accent {
+  background-color: #ec4899 !important;
+  color: white !important;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background-color: #db2777 !important;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+.btn-md {
+  padding: 0.5rem 1rem !important;
+  font-size: 1rem !important;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1.125rem !important;
+}
+
+.card {
+  background-color: white !important;
+  border-radius: 0.375rem !important;
+  overflow: hidden !important;
+}
+
+.card-bordered {
+  border: 1px solid #e5e7eb !important;
+}
+
+.card-elevated {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
 code {

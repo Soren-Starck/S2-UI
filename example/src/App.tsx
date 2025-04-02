@@ -29,17 +29,54 @@ const Button: React.FC<{
   children,
   onClick
 }) => {
+  // Base styles
+  let buttonClasses = "font-medium rounded transition-colors focus:outline-none";
+  
+  // Variant styles
+  if (variant === 'primary') {
+    buttonClasses += " bg-blue-500 text-white hover:bg-blue-600";
+  } else if (variant === 'secondary') {
+    buttonClasses += " bg-gray-200 text-gray-800 hover:bg-gray-300";
+  } else if (variant === 'accent') {
+    buttonClasses += " bg-pink-500 text-white hover:bg-pink-600";
+  }
+  
+  // Size styles
+  if (size === 'sm') {
+    buttonClasses += " py-1 px-2 text-sm";
+  } else if (size === 'md') {
+    buttonClasses += " py-2 px-4 text-base";
+  } else if (size === 'lg') {
+    buttonClasses += " py-3 px-6 text-lg";
+  }
+  
+  // Width styles
+  if (fullWidth) {
+    buttonClasses += " w-full";
+  }
+  
+  // Disabled styles
+  if (disabled) {
+    buttonClasses += " opacity-50 cursor-not-allowed";
+  } else {
+    buttonClasses += " cursor-pointer";
+  }
+  
+  // Add custom classes
+  buttonClasses += ` ${className}`;
+  
+  // Add CSS-defined classes as backup
+  buttonClasses += ` btn-${variant} btn-${size}`;
+  
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`
-        btn btn-${variant} btn-${size}
-        ${fullWidth ? 'w-full' : ''}
-        ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-        ${className}
-      `}
+      className={buttonClasses}
+      style={{
+        borderRadius: '0.25rem'
+      }}
     >
       {children}
     </button>
@@ -63,15 +100,25 @@ const Card: React.FC<{
   className = '',
   children
 }) => {
+  let cardClasses = "bg-white rounded-md overflow-hidden";
+  
+  if (bordered) {
+    cardClasses += " border border-gray-200";
+  }
+  
+  if (elevated) {
+    cardClasses += " shadow-md";
+  }
+  
+  cardClasses += ` ${className}`;
+  
+  // Add CSS-defined classes as backup
+  cardClasses += " card";
+  if (bordered) cardClasses += " card-bordered";
+  if (elevated) cardClasses += " card-elevated";
+  
   return (
-    <div 
-      className={`
-        card
-        ${bordered ? 'card-bordered' : ''}
-        ${elevated ? 'card-elevated' : ''}
-        ${className}
-      `}
-    >
+    <div className={cardClasses}>
       {(title || subtitle) && (
         <div className="p-4">
           {title && <h3 className="text-lg font-medium text-gray-900">{title}</h3>}
